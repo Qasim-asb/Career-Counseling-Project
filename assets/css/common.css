@@ -1,0 +1,76 @@
+/* || RESET */
+*,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color:inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+button {
+  color: inherit;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color var(--transition-normal);
+}
+
+/* || VARIABLES */
+:root {
+  /* Font size variables */
+  --fs-small: clamp(0.7778rem, 0.7098rem + 0.3399vw, 1rem);
+  --fs-medium: clamp(0.875rem, 0.7603rem + 0.5736vw, 1.25rem);
+  --fs-large: clamp(1.1074rem, 0.8487rem + 1.2936vw, 1.9531rem);
+  --fs-xl: clamp(1.2458rem, 0.8801rem + 1.8288vw, 2.4414rem);
+  --fs-xxl: clamp(1.5768rem, 0.8921rem + 3.4232vw, 3.8147rem);
+
+  /* Spacing variables */
+  --space-sm: clamp(0.4375rem, 0.2845rem + 0.7648vw, 0.9375rem);
+  --space-md: clamp(0.875rem, 0.5691rem + 1.5296vw, 1.875rem);
+  --space-lg: clamp(1.3125rem, 0.9492rem + 1.8164vw, 2.5rem);
+  --space-xl: clamp(1.75rem, 1.1381rem + 3.0593vw, 3.75rem);
+  --space-xxl: calc(13em - 20vw);
+  --space-reverse: clamp(1rem, max(1rem, -0.7237rem + 10.894vh), 3.5rem);
+
+  /* Color variables */
+  --color-nav-bg: rgba(0, 0, 0, 0.4);
+  --color-nav-bg-mobile: rgba(0, 0, 0, 0.8);
+  --color-cta-text: rgb(8, 27, 41);
+  --color-cta-bg: rgb(31, 174, 223);
+  --color-cta-hover: transparent;
+  --color-white: rgb(255, 255, 255);
+  --color-dark-blue: rgb(8, 27, 41);
+  --color-primary-blue: rgb(31, 174, 223);
+  --color-primary-blue-light: rgb(67, 181, 219);
+  --color-accent-blue: rgb(74, 111, 165);
+  --color-success-green: rgb(39, 174, 96);
+  --color-gray-light: rgb(248, 249, 250);
+  --color-gray-lighter: rgb(241, 244, 248);
+  --color-border-gray: rgb(224, 227, 231);
+
+  /* Box-shadow variables */
+  --shadow-nav: 0 3px 10px 4px rgba(255, 255, 255, 0.2);
+  --shadow-cta: 0 3px 10px 4px rgba(0, 0, 0, 0.6);
+  --shadow-cta-hover: none;
+  --shadow-table: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  /* Background linear-gradient */
+  --bg-linear-gradient: linear-gradient(to bottom, var(--color-cta-text), var(--color-primary-blue));
+
+  /* Transition timings */
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+}
+
+/* || GENERAL STYLES */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.3;
+  color: var(--color-white);
+}

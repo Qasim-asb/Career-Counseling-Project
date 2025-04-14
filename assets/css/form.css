@@ -1,0 +1,168 @@
+/* || GENERAL STYLES */
+body {
+  background: var(--color-dark-blue);
+}
+
+/* || QUIZ CONTAINER */
+.quiz-container {
+  width: min(85%, 62rem);
+  margin: 0 auto;
+}
+
+.quiz-title {
+  background-color: var(--color-primary-blue);
+  font-size: var(--fs-xl);
+  text-align: center;
+  padding-block: 0.5em;
+  letter-spacing: 0.5px;
+}
+
+.quiz-fieldset {
+  margin-block: var(--space-lg);
+  padding: var(--space-md);
+}
+
+.quiz-legend {
+  font-size: var(--fs-small);
+}
+
+/* Academic performance and marks history */
+.quiz-question {
+  font-size: var(--fs-medium);
+  margin-bottom: 1em;
+}
+
+.quiz-options {
+  margin-bottom: var(--space-md);
+}
+
+.quiz-option {
+  font-size: var(--fs-small);
+  margin-bottom: 0.5em;
+}
+
+/* Subject interests and skill preferences ratings */
+.quiz-interest-options {
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.5em;
+}
+
+.quiz-interest-option {
+  flex: 1;
+  font-size: var(--fs-small);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.quiz-interest-option input {
+  margin-bottom: var(--space-sm);
+}
+
+/* Form action buttons */
+.quiz-actions {
+  display: flex;
+  justify-content: center;
+  column-gap: 5%;
+}
+
+.quiz-button {
+  font-size: var(--fs-medium);
+  background-color: var(--color-primary-blue);
+  margin-bottom: 3em;
+  padding: 0.5em 1em;
+}
+
+.quiz-button:hover {
+  background-color: var(--color-primary-blue-light);
+}
+
+/* || MODAL */
+.modal {
+  display: none;
+  /* position: fixed; */
+  /* inset: 0; */
+  /* display: grid; */
+  /* place-items: center; */
+}
+
+.modal-container {
+  max-width: 90%;
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: var(--space-sm);
+  text-align: center;
+}
+
+.modal__title {
+  font-size: var(--fs-large);
+  color: var(--color-primary-blue);
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+
+.results-table {
+  border-collapse: collapse;
+  box-shadow: var(--shadow-table);
+  text-align: left;
+}
+
+.results-table__header {
+  background-color: var(--color-accent-blue);
+}
+
+.results-table__heading {
+  font-size: var(--fs-small);
+  padding: 0.5em;
+  letter-spacing: 0.5px;
+}
+
+.results-table__row {
+  transition: background-color var(--transition-normal);
+}
+
+.results-table__row:nth-child(even) {
+  background-color: var(--color-gray-light);
+}
+
+.results-table__row:hover {
+  background-color: var(--color-gray-lighter);
+}
+
+.results-table__data {
+  font-size: var(--fs-medium);
+  padding: 0.8em;
+  border-bottom: 1px solid var(--color-border-gray);
+}
+
+.results-table__data--university {
+  font-weight: 600;
+  color: var(--color-dark-blue);
+}
+
+.results-table__data--fee {
+  color: var(--color-success-green);
+  font-weight: 500;
+}
+
+.results-table__data--location {
+  color: var(--color-dark-blue);
+}
+
+.alert__message {
+  font-size: var(--fs-medium);
+  color: var(--color-dark-blue);
+}
+
+.modal__button {
+  font-size: var(--fs-medium);
+  padding: 0.3em 0.5em;
+  background-color: var(--color-primary-blue);
+  margin-top: 1em;
+  box-shadow: var(--shadow-table);
+}
+
+.modal__button:hover {
+  background-color: var(--color-primary-blue-light);
+}

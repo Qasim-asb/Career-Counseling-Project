@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./assets/css/common.css">
+  <link rel="stylesheet" href="./assets/css/form.css">
+
+  <title>Quiz Form</title>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+    <h2 class="quiz-title">Questions/Answers:</h2>
+
+    <div class="quiz-form-container">
+      <form id="quizForm">
+        <!-- Academic performance and marks history -->
+        <fieldset class="quiz-fieldset quiz-fieldset--academic">
+          <legend class="quiz-legend">PICK AN OPTION FROM EACH QUESTION!</legend>
+          <div class="quiz-question">
+            <label for="question1">Q1: What percentage range best represents your marks
+              obtained in SSC/Matric
+              exams?</label>
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" name="question1" value="1"> 50%-59%
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question1" value="2"> 60%-69%
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question1" value="3"> 70%-79%
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question1" value="4"> 80% or above
+            </div>
+          </div>
+          <div class="quiz-question">
+            <label for="question2" class="quiz-question__label">Q2: What percentage range best represents your marks
+              obtained in HSSC/ICS
+              exams?</label>
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" name="question2" value="1"> 50%-59%
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question2" value="2"> 60%-69%
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question2" value="3"> 70%-69%
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question2" value="4"> 80% or above
+            </div>
+          </div>
+          <div class="quiz-question">
+            <label for="question3">Q3: Which mark range best repesents your score in ICS
+              Computer Science theory paper?
+            </label>
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" name="question3" value="1"> Below 100
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question3" value="2"> 100-150
+            </div>
+          </div class="quiz-option">
+          <div class="quiz-question">
+            <label for="question4">Q4: Which mark range best represents your score in ICS
+              Computer Science Paractical
+              paper?</label>
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" name="question4" value="1"> Below 30
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question4" value="2"> 30-40
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question4" value="3"> Above 40
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Subject interests and skill preferences ratings -->
+        <fieldset class="quiz-fieldset quiz-fieldset--interests">
+          <legend class="quiz-legend">PICK YOUR FAVORITE SUBJECT AND PROVIDE YOUR INTEREST RANGE</legend>
+          <div class="quiz-question">
+            <label for="question5">Q5: On a scale from 1to 5, with 5 being the most
+              interesting and 1 being the least
+              interesting,please rate you interest in the following subjects using the provided scale:</label>
+          </div>
+          <div class="quiz-interest-options">
+            <div class="quiz-interest-option">
+              <input class="common" type="radio" name="question5" value="" id="sci"> Computer Science
+              <div class="num">
+                <input type="number" min="1" max="5" placeholder="1-5" id="sci-rating" disabled>
+              </div>
+            </div>
+
+            <div class="quiz-interest-option">
+              <input class="common" type="radio" name="question5" value="" id="math"> Mathematics
+              <div class="num">
+                <input type="number" min="1" max="5" placeholder="1-5" id="math-rating" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <label for="question6">Q6: On a scale from 1 to 5, with 5 being the most
+              interesting and 1 being the least
+              interesting, please rate you interest in the following programming topic using the provided scale:</label>
+          </div>
+          <div class="quiz-interest-options">
+            <div class="quiz-interest-option">
+              <input class="common" type="radio" name="question6" value="" id="loop"> Loop structure
+              <div class="num">
+                <input type="number" min="1" max="5" placeholder="1-5" id="loop-rating" disabled>
+              </div>
+            </div>
+            <div class="quiz-interest-option">
+              <input class="common" type="radio" name="question6" value="" id="self"> If-else-structure
+              <div class="num">
+                <input type="number" min="1" max="5" placeholder="1-5" id="self-rating" disabled>
+              </div>
+            </div>
+            <div class="quiz-interest-option">
+              <input class="common" type="radio" name="question6" value="" id="func"> Functions
+              <div class="num">
+                <input type="number" min="1" max="5" placeholder="1-5" id="func-rating" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <label for="question7">Q7: On a scale from 1 to 5, with 5 being the most
+              interesting and 1 being the least
+              interesting, please rate you interest in the following topics from Database systems using te provided
+              scale:</label>
+          </div>
+          <div class="quiz-interest-options">
+            <div class="quiz-interest-option">
+              <input class="common" type="radio" name="question7" value="" id="query"> Query
+              <div class="num">
+                <input type="number" min="1" max="5" placeholder="1-5" id="query-rating" disabled>
+              </div>
+            </div>
+            <div class="quiz-interest-option">
+              <input class="common" type="radio" name="question7" value="" id="forms"> Forms
+              <div class="num">
+                <input type="number" min="1" max="5" placeholder="1-5" id="forms-rating" disabled>
+              </div>
+            </div>
+            <div class="quiz-interest-option">
+              <input class="common" type="radio" name="question7" value="" id="reports"> Reports
+              <div class="num">
+                <input type="number" min="1" max="5" placeholder="1-5" id="reports-rating" disabled>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Family background and financial situation -->
+        <fieldset class="quiz-fieldset quiz-fieldset--personal">
+          <legend class="quiz-legend">PERSONAL INFORMATION</legend>
+          <div class="quiz-question">
+            <label for="question8">Q8: What is your family approximately monthly income range?</label>
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" name="question8" value="1"> Below 100,000
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question8" value="2"> 100,000-200,000
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question8" value="3"> 200,000-400,000
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question8" value="4"> Above 400,000
+            </div>
+          </div>
+          <div class="quiz-question">
+            <label for="question9">Q9: Please describe the type of residence you have ?</label>
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" name="question9" value="1"> Owned
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question9" value="2"> Hiring
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question9" value="3"> Shared
+            </div>
+          </div>
+          <div class="quiz-question">
+            <label for="question10">Q10: How many Siblings are currently studying in university?</label>
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" name="question10" value="1"> 1
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question10" value="2"> 2
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question10" value="3"> 3
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="question10" value="4"> More than 3
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Form action buttons -->
+        <div class="quiz-actions">
+          <button type="submit" class="quiz-button">Submit</button>
+          <button type="reset" class="quiz-button">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal dialog for displaying quiz results -->
+  <div class="modal">
+    <div class="modal-container">
+      <!-- <h2 class="modal__title">Recommended Universities</h2> -->
+      <!-- <table class="results-table">
+        <thead class="results-table__header">
+          <tr>
+            <th class="results-table__heading">UNIVERSITY</th>
+            <th class="results-table__heading">SEMESTER FEE</th>
+            <th class="results-table__heading">LOCATION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="results-table__row">
+            <td class="results-table__data results-table__data--university">National College of Arts (NCA)</td>
+            <td class="results-table__data results-table__data--fee">85,000 PKR</td>
+            <td class="results-table__data results-table__data--location">Lahore</td>
+          </tr>
+          <tr class="results-table__row">
+            <td class="results-table__data results-table__data--university">Government College for Boys</td>
+            <td class="results-table__data results-table__data--fee">80,000 PKR</td>
+            <td class="results-table__data results-table__data--location">Lahore</td>
+          </tr>
+          <tr class="results-table__row">
+            <td class="results-table__data results-table__data--university">The Islamia University of Bahawalpur</td>
+            <td class="results-table__data results-table__data--fee">75,000 PKR</td>
+            <td class="results-table__data results-table__data--location">Bahawalpur</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+      <!-- <p class="alert__message">It is mandatory to select an option for every question.</p> -->
+      
+      <!-- <button class="modal__button">OK</button> -->
+    </div>
+  </div>
+
+</body>
+
+</html>
