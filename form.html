@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="./assets/css/common.css">
   <link rel="stylesheet" href="./assets/css/form.css">
 
+  <script src="./assets/js/script.js" defer></script>
+
   <title>Quiz Form</title>
 </head>
 
@@ -19,7 +21,7 @@
     <div class="quiz-form-container">
       <form id="quizForm">
         <!-- Academic performance and marks history -->
-        <fieldset class="quiz-fieldset quiz-fieldset--academic">
+        <fieldset class="quiz-fieldset" id="quizAcademic">
           <legend class="quiz-legend">PICK AN OPTION FROM EACH QUESTION!</legend>
           <div class="quiz-question">
             <label for="question1">Q1: What percentage range best represents your marks
@@ -91,7 +93,7 @@
         </fieldset>
 
         <!-- Subject interests and skill preferences ratings -->
-        <fieldset class="quiz-fieldset quiz-fieldset--interests">
+        <fieldset class="quiz-fieldset" id="quizInterests">
           <legend class="quiz-legend">PICK YOUR FAVORITE SUBJECT AND PROVIDE YOUR INTEREST RANGE</legend>
           <div class="quiz-question">
             <label for="question5">Q5: On a scale from 1to 5, with 5 being the most
@@ -167,7 +169,7 @@
         </fieldset>
 
         <!-- Family background and financial situation -->
-        <fieldset class="quiz-fieldset quiz-fieldset--personal">
+        <fieldset class="quiz-fieldset" id="quizPersonal">
           <legend class="quiz-legend">PERSONAL INFORMATION</legend>
           <div class="quiz-question">
             <label for="question8">Q8: What is your family approximately monthly income range?</label>
