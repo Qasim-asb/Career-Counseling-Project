@@ -14,7 +14,6 @@ body {
   font-size: var(--fs-xl);
   text-align: center;
   padding-block: 0.5em;
-  letter-spacing: 0.5px;
 }
 
 .quiz-fieldset {
@@ -30,10 +29,13 @@ body {
 .quiz-question {
   font-size: var(--fs-medium);
   margin-bottom: 1em;
+  padding-left: 2em;
+  text-indent: -2em;
 }
 
 .quiz-options {
   margin-bottom: var(--space-md);
+  padding-left: 2em;
 }
 
 .quiz-option {
@@ -56,8 +58,9 @@ body {
   white-space: nowrap;
 }
 
-.quiz-interest-option input {
-  margin-bottom: var(--space-sm);
+.quiz-interest-option .num {
+  font-size: inherit;
+  margin-top: 0.3em;
 }
 
 /* Form action buttons */

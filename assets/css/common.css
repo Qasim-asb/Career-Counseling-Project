@@ -21,6 +21,11 @@ button {
   transition: background-color var(--transition-normal);
 }
 
+h1,
+h2 {
+  letter-spacing: 0.035rem;
+}
+
 /* || VARIABLES */
 :root {
   /* Font size variables */
@@ -37,7 +42,7 @@ button {
   --space-xl: clamp(1.75rem, 1.1381rem + 3.0593vw, 3.75rem);
   --space-xxl: calc(13em - 20vw);
   --space-reverse: clamp(1rem, max(1rem, -0.7237rem + 10.894vh), 3.5rem);
-
+  
   /* Color variables */
   --color-nav-bg: rgba(0, 0, 0, 0.4);
   --color-nav-bg-mobile: rgba(0, 0, 0, 0.8);
@@ -71,6 +76,5 @@ button {
 /* || GENERAL STYLES */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.3;
   color: var(--color-white);
 }
