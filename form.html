@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./assets/css/common.css">
   <link rel="stylesheet" href="./assets/css/form.css">
 
-  <script src="./assets/js/script.js" defer></script>
+  <script src="./assets/js/script.js" type="module"></script>
 
   <title>Quiz Form</title>
 </head>
@@ -98,17 +98,17 @@
           interesting, please rate your interest in the following subjects using the provided scale:</p>
         <div class="quiz-interest-options">
           <div class="quiz-interest-option">
-            <input type="radio" name="question5" value="" id="sci">
+            <input type="radio" name="question5" id="sci">
             <label for="sci">Computer Science</label>
             <div class="num">
-              <input type="number" min="1" max="5" placeholder="1-5" id="sci-rating" disabled>
+              <input type="number" min="1" max="5" placeholder="1-5" disabled>
             </div>
           </div>
           <div class="quiz-interest-option">
-            <input type="radio" name="question5" value="" id="math">
+            <input type="radio" name="question5" id="math">
             <label for="math">Mathematics</label>
             <div class="num">
-              <input type="number" min="1" max="5" placeholder="1-5" id="math-rating" disabled>
+              <input type="number" min="1" max="5" placeholder="1-5" disabled>
             </div>
           </div>
         </div>
@@ -116,24 +116,24 @@
           interesting, please rate your interest in the following programming topic using the provided scale:</p>
         <div class="quiz-interest-options">
           <div class="quiz-interest-option">
-            <input type="radio" name="question6" value="" id="loop">
+            <input type="radio" name="question6" id="loop">
             <label for="loop">Loop structure</label>
             <div class="num">
-              <input type="number" min="1" max="5" placeholder="1-5" id="loop-rating" disabled>
+              <input type="number" min="1" max="5" placeholder="1-5" disabled>
             </div>
           </div>
           <div class="quiz-interest-option">
-            <input type="radio" name="question6" value="" id="self">
+            <input type="radio" name="question6" id="self">
             <label for="self">If-else-structure</label>
             <div class="num">
-              <input type="number" min="1" max="5" placeholder="1-5" id="self-rating" disabled>
+              <input type="number" min="1" max="5" placeholder="1-5" disabled>
             </div>
           </div>
           <div class="quiz-interest-option">
-            <input type="radio" name="question6" value="" id="func">
+            <input type="radio" name="question6" id="func">
             <label for="func">Functions</label>
             <div class="num">
-              <input type="number" min="1" max="5" placeholder="1-5" id="func-rating" disabled>
+              <input type="number" min="1" max="5" placeholder="1-5" disabled>
             </div>
           </div>
         </div>
@@ -142,24 +142,24 @@
           scale:</p>
         <div class="quiz-interest-options">
           <div class="quiz-interest-option">
-            <input type="radio" name="question7" value="" id="query">
+            <input type="radio" name="question7" id="query">
             <label for="query">Query</label>
             <div class="num">
-              <input type="number" min="1" max="5" placeholder="1-5" id="query-rating" disabled>
+              <input type="number" min="1" max="5" placeholder="1-5" disabled>
             </div>
           </div>
           <div class="quiz-interest-option">
-            <input type="radio" name="question7" value="" id="forms">
+            <input type="radio" name="question7" id="forms">
             <label for="forms">Forms</label>
             <div class="num">
-              <input type="number" min="1" max="5" placeholder="1-5" id="forms-rating" disabled>
+              <input type="number" min="1" max="5" placeholder="1-5" disabled>
             </div>
           </div>
           <div class="quiz-interest-option">
-            <input type="radio" name="question7" value="" id="reports">
+            <input type="radio" name="question7" id="reports">
             <label for="reports">Reports</label>
             <div class="num">
-              <input type="number" min="1" max="5" placeholder="1-5" id="reports-rating" disabled>
+              <input type="number" min="1" max="5" placeholder="1-5" disabled>
             </div>
           </div>
         </div>
@@ -232,41 +232,7 @@
   </div>
 
   <!-- Modal dialog for displaying quiz results -->
-  <div class="modal">
-    <div class="modal-container">
-      <!-- <h2 class="modal__title">Recommended Universities</h2> -->
-      <!-- <table class="results-table">
-        <thead class="results-table__header">
-          <tr>
-            <th class="results-table__heading">UNIVERSITY</th>
-            <th class="results-table__heading">SEMESTER FEE</th>
-            <th class="results-table__heading">LOCATION</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="results-table__row">
-            <td class="results-table__data results-table__data--university">National College of Arts (NCA)</td>
-            <td class="results-table__data results-table__data--fee">85,000 PKR</td>
-            <td class="results-table__data results-table__data--location">Lahore</td>
-          </tr>
-          <tr class="results-table__row">
-            <td class="results-table__data results-table__data--university">Government College for Boys</td>
-            <td class="results-table__data results-table__data--fee">80,000 PKR</td>
-            <td class="results-table__data results-table__data--location">Lahore</td>
-          </tr>
-          <tr class="results-table__row">
-            <td class="results-table__data results-table__data--university">The Islamia University of Bahawalpur</td>
-            <td class="results-table__data results-table__data--fee">75,000 PKR</td>
-            <td class="results-table__data results-table__data--location">Bahawalpur</td>
-          </tr>
-        </tbody>
-      </table> -->
-
-      <!-- <p class="alert__message">It is mandatory to select an option for every question.</p> -->
-
-      <!-- <button class="modal__button">OK</button> -->
-    </div>
-  </div>
+  <div class="modal"></div>
 
 </body>
 

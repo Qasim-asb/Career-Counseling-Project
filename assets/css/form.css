@@ -58,9 +58,13 @@ body {
   white-space: nowrap;
 }
 
-.quiz-interest-option .num {
+.quiz-interest-option .num input {
   font-size: inherit;
   margin-top: 0.3em;
+}
+
+.quiz-interest-option .num input::placeholder {
+  opacity: 0.5;
 }
 
 /* Form action buttons */
@@ -83,11 +87,10 @@ body {
 
 /* || MODAL */
 .modal {
+  position: fixed;
+  inset: 0;
   display: none;
-  /* position: fixed; */
-  /* inset: 0; */
-  /* display: grid; */
-  /* place-items: center; */
+  place-items: center;
 }
 
 .modal-container {
@@ -134,8 +137,8 @@ body {
 }
 
 .results-table__data {
-  font-size: var(--fs-medium);
-  padding: 0.8em;
+  font-size: var(--fs-small);
+  padding: 0.5em;
   border-bottom: 1px solid var(--color-border-gray);
 }
 
