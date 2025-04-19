@@ -3,12 +3,57 @@ body {
   background: var(--color-dark-blue);
 }
 
-/* || QUIZ CONTAINER */
-.quiz-container {
+.container {
   width: min(85%, 62rem);
   margin: 0 auto;
 }
 
+/* PROGRESS CONTAINER */
+.progress-container {
+  position: sticky;
+  top: 0;
+  padding-block: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.progress-bar {
+  height: 0.7rem;
+  background-color: var(--color-white);
+  border-radius: 5px;
+  margin-bottom: var(--space-sm);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4CAF50;
+  width: 0%;
+  transition: width var(--transition-slow);
+}
+
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.step {
+  font-size: var(--fs-small);
+  padding: 0.5em 1em;
+  background-color: var(--color-white);
+  border-radius: 20px;
+  color: var(--color-dark-blue);
+  flex: 1;
+  text-align: center;
+}
+
+.step.active {
+  background-color: #4CAF50;
+  color: var(--color-white);
+  font-weight: bold;
+}
+
+/* || QUIZ CONTAINER */
 .quiz-title {
   background-color: var(--color-primary-blue);
   font-size: var(--fs-xl);
