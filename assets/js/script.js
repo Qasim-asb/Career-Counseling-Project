@@ -13,42 +13,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let allValues = [];
   const sections = [academicSection, interestsSection, personalSection];
+  let completedSections = 0;
 
-  const updateProgress = () => {
-    let completedSections = 0;
+  const updateProgress = (section, index) => {
+    let isComplete;
 
-    sections.forEach((section, index) => {
-      let isComplete;
-
-      if (section === interestsSection) {
-        const questionGroups = section.querySelectorAll('.quiz-interest-options');
-        isComplete = [...questionGroups].every(group => {
-          const checkedRadio = group.querySelector("input[type='radio']:checked");
-          if (!checkedRadio) return false;
-          const numInput = group.querySelector("input[type='number']");
-          return numInput.value !== "";
-        });
-      } else {
-        const inputs = section.querySelectorAll("input[type='radio']");
-        const names = new Set();
-        Array.from(inputs, input => names.add(input.name));
-        isComplete = [...names].every(name => section.querySelector(`input[name="${name}"]:checked`));
+    if (section === interestsSection) {
+      const checkedRadios = section.querySelectorAll("input[type='radio']:checked");
+      if (checkedRadios.length === 3) {
+        isComplete = [...checkedRadios].every(checkedRadio => Number(checkedRadio.value));
       }
+    } else {
+      const inputs = section.querySelectorAll("input[type='radio']");
+      const names = new Set();
+      Array.from(inputs, input => names.add(input.name));
+      isComplete = [...names].every(name => section.querySelector(`input[name="${name}"]:checked`));
+    }
 
-      if (isComplete) {
+    if (isComplete) {
+      if (!steps[index].classList.contains("active")) {
         completedSections++;
         steps[index].classList.add("active");
       }
-    });
+    } else {
+      if (steps[index].classList.contains("active")) {
+        completedSections--;
+        steps[index].classList.remove("active");
+      }
+    }
 
     progressFill.style.width = `${(completedSections / 3) * 100}%`;
   }
-
-  sections.forEach(section => {
-    section.addEventListener("change", () => {
-      updateProgress();
-    });
-  });
 
   const setupInterestsSection = () => {
     interestsSection.addEventListener("change", (e) => {
@@ -92,6 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupInterestsSection();
 
+  sections.forEach((section, index) => {
+    section.addEventListener("change", () => {
+      updateProgress(section, index);
+    });
+  });
+
   const collectAllValues = (section) => {
     const inputNames = new Set();
     const radios = section.querySelectorAll("input[type='radio']");
@@ -127,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     interestsSection.querySelectorAll("input[type='radio']").forEach(radio => radio.value = 0);
 
     allValues = [];
+    completedSections = 0;
     progressFill.style.width = "0%";
     steps.forEach(step => step.classList.remove("active"));
   }
