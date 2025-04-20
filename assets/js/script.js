@@ -96,10 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputNames = new Set();
     const radios = section.querySelectorAll("input[type='radio']");
     radios.forEach(radio => inputNames.add(radio.name));
-
+    
     let allAnswered = true;
     let checked;
-
+    
     inputNames.forEach(name => {
       checked = section.querySelector(`input[name="${name}"]:checked`);
 
@@ -124,6 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
       input.value = "";
       input.disabled = true;
     });
+
+    interestsSection.querySelectorAll("input[type='radio']").forEach(radio => radio.value = 0);
+    
     allValues = [];
     progressFill.style.width = "0%";
     steps.forEach(step => step.classList.remove("active"));
@@ -136,6 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
     collectAllValues(interestsSection);
     collectAllValues(personalSection);
 
+    console.log(allValues);
+    
     if (allValues.length < 10) {
       modal.innerHTML = warningTextCreater();
       modal.style.display = "grid";
@@ -146,6 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.innerHTML = tableTextCreater(selectedGroup.universities);
       modal.style.display = "grid";
     }
+
+    // const all = interestsSection.querySelectorAll("input[type='radio']");
+    // all.forEach(each => {
+    //   console.log(each.value);
+    // });
 
     const modalBtn = document.querySelector(".modal__button");
     modalBtn.addEventListener("click", (e) => {
