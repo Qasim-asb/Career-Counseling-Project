@@ -15,14 +15,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = [academicSection, interestsSection, personalSection];
   let completedSections = 0;
 
-  const updateProgress = (section, index) => {
+  const handleRadioChange = (e) => {
+    const radioBtn = e.target;
+    const container = radioBtn.closest('.quiz-interest-option');
+    const numInput = container.querySelector("input[type='number']");
+    numInput.disabled = false;
+    numInput.focus();
+
+    const questionGroup = container.closest('.quiz-interest-options');
+    questionGroup.querySelectorAll("input[type='number']").forEach(input => {
+      if (input !== numInput) input.disabled = true;
+    });
+  }
+
+  const handleNumberChange = (e) => {
+    const numInput = e.target;
+    const container = numInput.closest('.quiz-interest-option');
+    const radioBtn = container.querySelector("input[type='radio']");
+    radioBtn.value = numInput.value;
+
+    const questionGroup = container.closest('.quiz-interest-options');
+    questionGroup.querySelectorAll("input[type='number']").forEach(input => {
+      if (input !== numInput) input.value = "";
+    });
+  }
+
+  const updateProgress = (section, index, e) => {
     let isComplete;
 
     if (section === interestsSection) {
-      const checkedRadios = section.querySelectorAll("input[type='radio']:checked");
-      if (checkedRadios.length === 3) {
-        isComplete = [...checkedRadios].every(checkedRadio => Number(checkedRadio.value));
+      if (e.target.type === "radio") {
+        handleRadioChange(e);
+      } else if (e.target.type === "number") {
+        handleNumberChange(e);
       }
+
+      const checkedRadios = section.querySelectorAll("input[type='radio']:checked");
+      isComplete = checkedRadios.length === 3 && [...checkedRadios].every(checkedRadio => Number(checkedRadio.value));
     } else {
       const inputs = section.querySelectorAll("input[type='radio']");
       const names = new Set();
@@ -45,51 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
     progressFill.style.width = `${(completedSections / 3) * 100}%`;
   }
 
-  const setupInterestsSection = () => {
-    interestsSection.addEventListener("change", (e) => {
-      if (e.target.type === "radio") {
-        handleRadioChange(e);
-      } else if (e.target.type === "number") {
-        handleNumberChange(e);
-      }
-    });
-
-    const handleRadioChange = (e) => {
-      const radioBtn = e.target;
-      const container = radioBtn.closest('.quiz-interest-option');
-      const numInput = container.querySelector("input[type='number']");
-      numInput.disabled = false;
-      numInput.focus();
-      const questionGroup = container.closest('.quiz-interest-options');
-      questionGroup.querySelectorAll("input[type='number']").forEach(input => {
-        if (input !== numInput) {
-          input.disabled = true;
-        }
-      });
-    }
-
-    const handleNumberChange = (e) => {
-      const numInput = e.target;
-      const value = numInput.value;
-
-      const container = numInput.closest('.quiz-interest-option');
-      const radioBtn = container.querySelector("input[type='radio']");
-      radioBtn.value = value;
-
-      const questionGroup = container.closest('.quiz-interest-options');
-      questionGroup.querySelectorAll("input[type='number']").forEach(input => {
-        if (input !== numInput && value > 0) {
-          input.value = "";
-        }
-      });
-    }
-  }
-
-  setupInterestsSection();
-
   sections.forEach((section, index) => {
-    section.addEventListener("change", () => {
-      updateProgress(section, index);
+    section.addEventListener("change", (e) => {
+      updateProgress(section, index, e);
     });
   });
 
@@ -102,18 +89,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     inputNames.forEach(name => {
       const checked = section.querySelector(`input[name="${name}"]:checked`);
-
-      if (!checked) {
-        allAnswered = false;
-      }
+      if (!checked) allAnswered = false;
     });
 
     if (allAnswered) {
       section.querySelectorAll("input[type='radio']:checked").forEach(checkedBtn => {
         const value = Number(checkedBtn.value);
-        if (value) {
-          allValues.push(value);
-        }
+        if (value) allValues.push(value);
       });
     }
   }
@@ -160,7 +142,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  form.addEventListener("reset", () => {
-    resetForm();
-  });
+  form.addEventListener("reset", resetForm);
 });
