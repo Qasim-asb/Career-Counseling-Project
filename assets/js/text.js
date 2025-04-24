@@ -9,32 +9,28 @@ export const tableTextCreater = (unisArray) => {
       </tr>
     `
   });
-  
+
   return `
-    <div class="modal-container">
-      <h2 class="modal__title">Recommended Universities</h2>
-      <table class="results-table">
-        <thead class="results-table__header">
-          <tr>
-            <th class="results-table__heading">UNIVERSITY</th>
-            <th class="results-table__heading">SEMESTER FEE</th>
-            <th class="results-table__heading">LOCATION</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${html}
-        </tbody>
-      </table>
-      <button class="modal__button">CLOSE</button>
-    </div>
+    <h2 class="modal__title">Recommended Universities</h2>
+    <table class="results-table">
+      <thead class="results-table__header">
+        <tr>
+          <th class="results-table__heading">UNIVERSITY</th>
+          <th class="results-table__heading">SEMESTER FEE</th>
+          <th class="results-table__heading">LOCATION</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${html}
+      </tbody>
+    </table>
+    <button class="modal__button">CLOSE</button>
   `;
 }
 
 export const warningTextCreater = () => {
   return `
-    <div class="modal-container">
-      <p class="alert__message">It is mandatory to select an option for every question.</p>
-      <button class="modal__button">OK</button>
-    </div>
+    <p class="alert__message">It is mandatory to select an option for every question.</p>
+    <button class="modal__button">OK</button>
   `;
 }

@@ -115,6 +115,16 @@ document.addEventListener("DOMContentLoaded", () => {
     steps.forEach(step => step.classList.remove("active"));
   }
 
+  const dialogModal = (boolean) => {
+    if (boolean) {
+      modal.showModal();
+      document.body.style.overflow = "hidden";
+    } else {
+      modal.close();
+      document.body.style.overflow = "auto";
+    }
+  }
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -122,23 +132,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (allValues.length < 10) {
       modal.innerHTML = warningTextCreater();
-      modal.style.display = "grid";
       allValues = [];
     } else {
       const totalValue = allValues.reduce((acc, curr) => acc + curr);
       const selectedGroup = universitiesData.find(group => group.id === totalValue - 1 || group.id === totalValue);
       modal.innerHTML = tableTextCreater(selectedGroup.universities);
-      modal.style.display = "grid";
     }
+
+    dialogModal(true);
 
     const modalBtn = document.querySelector(".modal__button");
     modalBtn.addEventListener("click", (e) => {
-      if (e.target.textContent === "CLOSE") {
-        modal.style.display = "none";
-        resetForm();
-      } else {
-        modal.style.display = "none";
-      }
+      if (e.target.textContent === "CLOSE") resetForm();
+      dialogModal(false);
     });
   });
 
