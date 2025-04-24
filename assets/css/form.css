@@ -14,6 +14,8 @@ body {
   top: 0;
   padding-block: var(--space-sm);
   margin-bottom: var(--space-lg);
+  pointer-events: none;
+  z-index: 999;
 }
 
 .progress-bar {
@@ -22,6 +24,7 @@ body {
   border-radius: 5px;
   margin-bottom: var(--space-sm);
   overflow: hidden;
+  pointer-events: auto;
 }
 
 .progress-fill {
@@ -35,6 +38,7 @@ body {
   display: flex;
   justify-content: space-between;
   gap: var(--space-lg);
+  pointer-events: auto;
 }
 
 .step {
@@ -132,18 +136,18 @@ body {
 
 /* || MODAL */
 .modal {
-  position: fixed;
-  inset: 0;
-  display: none;
-  place-items: center;
-}
-
-.modal-container {
-  max-width: 90%;
-  background: var(--color-white);
+  border: none;
   border-radius: 12px;
   padding: var(--space-sm);
   text-align: center;
+  width: max(33rem, 60%);
+}
+
+.modal[open] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal__title {
@@ -157,6 +161,7 @@ body {
   border-collapse: collapse;
   box-shadow: var(--shadow-table);
   text-align: left;
+  width: 100%;
 }
 
 .results-table__header {
@@ -167,6 +172,7 @@ body {
   font-size: var(--fs-small);
   padding: 0.5em;
   letter-spacing: 0.5px;
+  color: var(--color-white);
 }
 
 .results-table__row {
@@ -212,6 +218,7 @@ body {
   background-color: var(--color-primary-blue);
   margin-top: 1em;
   box-shadow: var(--shadow-table);
+  color: var(--color-white);
 }
 
 .modal__button:hover {
